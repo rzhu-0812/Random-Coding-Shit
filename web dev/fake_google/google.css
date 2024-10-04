@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Patrick+Hand&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+nav {
+    margin: 10px 5px;
+    padding: 0 10px;
+}
+
+.footer {
+    margin-top: auto;
+    padding: 15px 0px;
+    background-color: #f7f8f9;
+    width: 100%;
+}
+
+nav,
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a,
+.footer a {
+    color: #1f1f1f;
+    text-decoration: none;
+}
+
+nav a {
+    margin: 0 8px;
+    font-size: 14px;
+}
+
+.footer a {
+    margin: 0 8px;
+    font-size: 13px;
+}
+
+nav a:hover,
+.footer a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+input.search {
+    border-radius: 100px;
+    margin: 25px 0;
+    padding: 15px;
+    border: 1px solid #d2d2d2;
+    font-size: 15px;
+    width: 80%;
+    max-width: 550px;
+}
+
+input.search:hover {
+    box-shadow: 0 0 4px #d6d6d6;
+}
+
+input.search:focus {
+    outline: none;
+    border-color: #b2b2b2;
+    box-shadow: 0 0 4px #b4b4b4;
+}
+
+.sign-in {
+    color: white;
+    background-color: #0b57d0;
+    border-color: #0b57d0;
+    padding: 10px 20px;
+    margin: 0 0 0 10px;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+.sign-in:hover {
+    cursor: pointer;
+    background-color: #1e62cf;
+}
+
+.google {
+    height: auto;
+    max-width: 272px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 23vh;
+    margin-bottom: 20vh;
+    width: 100%;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+}
+
+.buttons button {
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 5px;
+    margin: 0 7.5px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.buttons button:hover {
+    border: 1px solid #e1d9dc;
+    box-shadow: 0 1px 1px #d2d2d2;
+    cursor: pointer;
+}
+
+.left-most {
+    padding-left: 20px;
+}
+
+.right-most {
+    padding-right: 20px;
+}
+
+.lucky {
+    position: relative;
+    font-size: 14px;
+    padding: 10px 20px;
+    margin: 0 7.5px;
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lucky.active {
+    color: black;
+}

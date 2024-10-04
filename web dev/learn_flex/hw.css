@@ -1,0 +1,20 @@
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 20px;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.images img {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border: 3px dotted black;
+    border-radius: 10px;
+}

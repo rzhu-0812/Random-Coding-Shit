@@ -1,0 +1,27 @@
+import time
+import random
+import sys
+
+# Define the symbols for the slots
+symbols = ["\u2660", "\u2665", "\u2666", "\u2663"]
+
+def spin():
+    # Clear the previous output
+    sys.stdout.write("\033[F")  # Move cursor up one line
+    sys.stdout.write("\033[K")  # Clear the line
+
+    # Generate random symbols for each slot
+    return [random.choice(symbols) for _ in range(3)]
+
+# Number of spins
+spins = 10
+slots = []
+
+for _ in range(spins):
+    slots = spin()
+    print(f"{' '.join(slots)}")
+    time.sleep(0.1)
+
+# Final result
+result = "Win!" if len(set(slots)) == 1 else "Try again"
+print(result)

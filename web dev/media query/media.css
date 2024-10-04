@@ -1,0 +1,27 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.main {
+    height: 100vh;
+    background-color: black;
+}
+
+.grid-container { 
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: dotted 2px black;
+}
+
+.grid-item {
+    text-align: center;
+    padding: 10px;
+    border: dotted 2px black;
+}
+
+@media only screen and (max-width: 600px){
+    .main {
+        background-color: aqua;
+    }
+}

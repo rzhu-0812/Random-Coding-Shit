@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+
+:root {
+    --primary-color: rgb(24, 29, 37);
+    --secondary-color: rgb(78, 85, 98);
+    --border-color: rgb(224, 229, 235);
+    --light-bg-color: rgb(245, 247, 250);
+    --light-text-color: rgb(156, 163, 175);
+    --base-font-size: 0vw;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: var(--base-font-size);
+}
+
+.title {
+    font-weight: 600;
+    font-size: calc(var(--base-font-size) * 1.5);
+    color: var(--primary-color);
+    margin-top: 20px;
+}
+
+.fake-button {
+    font-weight: 500;
+    font-size: var(--base-font-size);
+}
+
+.active {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.img-container {
+    background-color: var(--light-bg-color);
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.description,
+.price,
+.colors {
+    padding-left: auto;
+}
+
+.description {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: calc(var(--base-font-size) * 0.56);
+    padding-top: 10px;
+}
+
+.price {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: calc(var(--base-font-size) * 0.64);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.colors {
+    color: var(--secondary-color);
+    font-size: calc(var(--base-font-size) * 0.48);
+    font-weight: 400;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+del {
+    color: var(--light-text-color);
+    font-size: calc(var(--base-font-size) * 0.56);
+    font-weight: 400;
+}
+
+li {
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    color: rgb(51, 61, 76);
+    padding: 7px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    overflow: scroll;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 15px;
+    text-align: left;
+}
+
+.product-item {
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.large-div {
+    margin-top: 6px;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.large-div img {
+    background-color: var(--light-bg-color);
+    max-width: 70%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --base-font-size: 1.5vw;
+    }
+    .fake-button {
+        font-size: var(--base-font-size);
+    }
+    .products {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .large-div {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 800px) {
+    :root {
+        --base-font-size: 2.5vw;
+    }
+    .fake-button {
+        font-size: var(--base-font-size);
+    }
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .large-div {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 799px) {
+    :root {
+        --base-font-size: 3.5vw;
+    }
+    .fake-button {
+        font-size: var(--base-font-size);
+    }
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .large-div {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 399px) {
+    :root {
+        --base-font-size: 4.5vw;
+    }
+    .fake-button {
+        font-size: var(--base-font-size);
+    }
+    .products {
+        grid-template-columns: 1fr;
+    }
+    .large-div {
+        grid-column: span 1;
+    }
+}

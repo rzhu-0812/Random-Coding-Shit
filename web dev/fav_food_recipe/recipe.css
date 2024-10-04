@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Patrick+Hand&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+
+body {
+    font-family: "Patrick Hand", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+    font-size: 50px;
+}
+
+h2 {
+    color: rgb(143, 111, 83);
+    font-size: 30px;
+    margin: 5px;
+}
+
+li {
+    font-size: 17px;
+}
+
+img {
+    scale: 75%;
+    margin: 5px;
+}
+
+.container {
+    padding: 10px;
+    margin: 5px;
+    background-color: rgb(218, 199, 178);
+    border-radius: 16px;
+}
+
+.img-container {
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: beige;
+    white-space: nowrap;
+    position: relative;
+}
+
+.img-container::before,
+.img-container::after {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.img-container:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+  
+.img-container:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.slider {
+    display: inline-block;
+    animation: slide 10s infinite linear;
+    border-radius: 16px;
+}
+
+.slider img {
+    height: 100px;
+    margin: 0 20px;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+  }
