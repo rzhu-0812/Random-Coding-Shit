@@ -28,10 +28,8 @@ class SpaceAdventure:
     self.health = 3
     self.game_over = False
     self.shield_active = False
-    self.shield_activated = False
     self.shield_duration = 120
     self.shield_timer = 0
-    self.shield_count = 0
     self.shoot_active = False
     self.shoot_duration = 300
     self.shoot_timer = 0
@@ -72,24 +70,16 @@ class SpaceAdventure:
 
 
   def shields(self):
-    if self.shield_active and self.shield_count > 0:
-      shield_rect = self.screen.blit(self.shield_img, (self.WIDTH - 120, 60))
+    if self.shield_active:
+      self.shield_timer -= 1
+      shield_rect = self.screen.blit(self.shield_img, (self.WIDTH - 120, 70))
 
-      if self.shield_activated:
-        bar = int((self.shield_timer / self.shield_duration) * 80)
-        pygame.draw.rect(self.screen, self.WHITE, (self.WIDTH - 80, shield_rect.centery - 10, bar, 20))
+      bar = int((self.shield_timer / self.shield_duration) * 80)
+      pygame.draw.rect(self.screen, self.WHITE, (self.WIDTH - 80, shield_rect.centery - 10, bar, 20))
 
-        self.shield_timer -= 1
-        
-        if self.shield_timer <= 0:
-          if self.shield_count == 0:
-            self.shield_active = False
-          self.shield_activated = False
-          self.shield_count -= 1
-          self.shield_timer = self.shield_duration
-
-      else:
-        self.render_text(f"{self.shield_count}", self.WHITE, self.WIDTH - 70, shield_rect.centery - 10)
+      if self.shield_timer <= 0:
+        self.shield_active = False
+        self.shoot_timer = self.shoot_duration
 
   def shoots(self):
     if self.shoot_active:
@@ -155,7 +145,7 @@ def main():
       obstacle.y += 5
 
       if obstacle.colliderect(s.spaceship_rect):
-        if not s.shield_activated:
+        if not s.shield_active:
           s.health -= 1
           if s.health > 0:
             obstacles.remove(obstacle)
@@ -167,8 +157,8 @@ def main():
       
       if shield.colliderect(s.spaceship_rect):
         shields.remove(shield)
-        s.shield_count += 1
         s.shield_active = True
+        s.shield_timer = s.shield_duration
 
     for shoot in shoots:
       shoot.y += 5
