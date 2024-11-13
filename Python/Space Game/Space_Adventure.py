@@ -72,7 +72,7 @@ class SpaceAdventure:
   def shields(self):
     if self.shield_active:
       self.shield_timer -= 1
-      shield_rect = self.screen.blit(self.shield_img, (self.WIDTH - 120, 70))
+      shield_rect = self.screen.blit(self.shield_img, (self.WIDTH - 120, 60))
 
       bar = int((self.shield_timer / self.shield_duration) * 80)
       pygame.draw.rect(self.screen, self.WHITE, (self.WIDTH - 80, shield_rect.centery - 10, bar, 20))
